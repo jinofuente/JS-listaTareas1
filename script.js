@@ -11,7 +11,9 @@ addBtn.addEventListener("click", (e) => {
 
     const text = input.value; // cuando se pique en el botn va agarrar el valor que este dentro del imput
 
-    //INICIO DE AGREGANDO ELEMENTOS AL HTML
+    if (text !==''){
+        
+        //INICIO DE AGREGANDO ELEMENTOS AL HTML
     const li = document.createElement("li");
     const p = document.createElement("p");
     p.textContent = text;
@@ -22,6 +24,9 @@ addBtn.addEventListener("click", (e) => {
     //FIN DE AGREGANDO ELEMENTOS AL HTML
 
     input.value = "";
+    empty.style.display = "none"; // para el empty display none
+    }
+    
 })
 
 // creando funcion para crear boton de eliminar y eliminar el item
@@ -37,6 +42,14 @@ function addDeleteBtn(){
         const item = e.target.parentElement;
         //removeChild = del padre elimina al hijo
         ul.removeChild(item);
+
+
+        const items = document.querySelectorAll('li');
+        if(items.length === 0)
+        {
+            empty.style.display = "block";
+        }
+
     });
     return deleteBtn;
 }
