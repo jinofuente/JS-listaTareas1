@@ -31,12 +31,12 @@ function addDeleteBtn(){
     deleteBtn.textContent = "X";   // agregand contenido al btn
     deleteBtn.className = "btn-delete";   // agregando stilo
 
-    deleteBtn.addEventListener('click', (e) =>{
+    deleteBtn.addEventListener("click", (e) =>{
         //target = se refiere al boton
         //parentElement = elimina  el elemento de arriba el li
         const item = e.target.parentElement;
         //removeChild = del padre elimina al hijo
         ul.removeChild(item);
-    })
-    return addDeleteBtn;
+    });
+    return deleteBtn;
 }
