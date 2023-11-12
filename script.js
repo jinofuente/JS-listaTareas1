@@ -9,5 +9,14 @@ addBtn.addEventListener("click", (e) => {
     //la continuacion del comentario de abajo: para q no se recarge se utiliza preventDefault()
     e.preventDefault();    
 
-    const text = input.value;
+    const text = input.value; // cuando se pique en el botn va agarrar el valor que este dentro del imput
+
+    const li = document.createElement("li");
+    const p = document.createElement("p");
+    p.textContent = text;
+
+    li.appendChild(p);
+    ul.appendChild(li);
+
+    input.value = "";
 })
